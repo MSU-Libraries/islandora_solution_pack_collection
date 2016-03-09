@@ -149,7 +149,7 @@ function template_preprocess_islandora_basic_collection(&$variables) {
     $associated_objects_array[$pid]['title'] = $title;
     $associated_objects_array[$pid]['class'] = drupal_strtolower(preg_replace('/[^A-Za-z0-9]/', '-', $pid));
     if (isset($fc_object['TN']) && islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $fc_object['TN'])) {
-      $thumbnail_img = theme('image', array('path' => "$object_url/datastream/TN/view"));
+     $thumbnail_img = theme('image', array('path' => "$object_url/datastream/TN/view", 'alt' => $title));
     }
     else {
       $image_path = drupal_get_path('module', 'islandora');
